@@ -8,5 +8,20 @@ spring:
   profiles:
     active: ${SPRING_PROFILES_ACTIVE:dev}
 
+  liquibase:
+    enabled: true
+    change-log: classpath:db/changelog/db.changelog-master.yaml
+
+    datasource:
+      url: jdbc:postgresql://localhost:5432/test
+      username: postgres
+      password: root
+
 server:
   port: 8088
+
+application:
+  feature:
+    featureToggles:
+      cosmo-cats: true
+      admin-operation: true
