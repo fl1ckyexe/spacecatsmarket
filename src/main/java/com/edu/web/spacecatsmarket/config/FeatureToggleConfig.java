@@ -15,4 +15,8 @@ import java.util.Map;
 public class FeatureToggleConfig {
 
     Map<FeatureToggles, Boolean> featureToggles;
+
+    public boolean isFeatureToggleEnabled(FeatureToggles featureToggle) {
+        return featureToggles.get(featureToggle);
+    }
 }
